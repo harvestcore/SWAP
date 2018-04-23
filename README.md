@@ -2,11 +2,11 @@
 
 ## Prácticas:
 
-- [P1](https://github.com/harvestcore/SWAP/blob/master/practicas/p1/p1.md)
-- [P2](https://github.com/harvestcore/SWAP/blob/master/practicas/p2/p2.md)
-- [P3](https://github.com/harvestcore/SWAP/tree/master/practicas/p3/p3.md)
-- P4 - todo
-- P5 - todo
+- [Práctica 1](https://github.com/harvestcore/SWAP/blob/master/practicas/p1/p1.md)
+- [Práctica 2](https://github.com/harvestcore/SWAP/blob/master/practicas/p2/p2.md)
+- [Práctica 3](https://github.com/harvestcore/SWAP/tree/master/practicas/p3/p3.md)
+- Práctica 4 - todo
+- Práctica 5 - todo
 
 
 
