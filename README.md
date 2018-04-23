@@ -12,7 +12,7 @@
 
 ## Ejercicios:
 
-- [Tema 1]()
-- [Tema 2]()
-- [Tema 3]()
+- [Tema 1](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema1/ejt1.md)
+- [Tema 2](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema2/ejt2.md)
+- [Tema 3](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema3/ejt3.md)
 
