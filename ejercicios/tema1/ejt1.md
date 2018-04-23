@@ -1,0 +1,9 @@
+# Ejercicios tema 1
+
+## 1.1
+
+- **Apache** Es un servidor web HTTP de código abierto, para plataformas Unix, Windows y Macintosh. Apache se utiliza principalmente como servidor web y es en la popular plataforma de aplicaciones LAMP, junto a MySQL y los lenguajes de programación PHP/Perl/Python.
+- **Nginx**  Es un servidor web ligero de alto rendimiento y un proxy para protocolos de email. Es de software libre y de código abierto. Otro uso que tiene es como balanceador de carga. Originalmente, nginx fue desarrollado para satisfacer las necesidades de varios sitios web de Rambler que recibían unas 500 millones de peticiones al día.
+- **thttpd** Es un servidor web de código libre disponible para la mayoría de las variantes Unix. Se caracteriza por ser simple, pequeño, portátil, rápido, y seguro, ya que utiliza los requerimientos mínimos de un servidor HTTP. Esto lo hace ideal para servir grandes volúmenes de información estática. El uso apropiado de esta herramienta es obtener velocidad en la transferencia de archivos y reducción de gastos innecesarios para funciones que no son requeridas en el servidor.
+- **Cherokee** **Cherokee** Es un servidor web multiplataforma. Su objetivo es ser rápido y completamente funcional, sin dejar de ser liviano comparado con otros servidores web. Está escrito completamente en C. Puede usarse como un sistema embebido y soporta complementos para aumentar sus funcionalidades. Es software libre, disponible bajo la Licencia General de GNU.
+- **node.js** Es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación ECMAScript, asíncrono, con I/O de datos en una arquitectura basa en eventos y basado en el motor V8 de Google. Fue creado con el enfoque de ser útil en la creación de programas de red altamente escalables, como por ejemplo, servidores web.
