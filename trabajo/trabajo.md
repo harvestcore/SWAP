@@ -97,7 +97,7 @@ Tras esto comenzaría la instalación, que tras finalizar y reiniciarse la máqu
 
 ![](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/XEN/install/7.PNG)
 
-Es la única interfaz que tiene XenServer en local. En ella se pueden hacer algunas configuraciones, pero no todas las que necesitamos. XenCenter es un programa bastante interesante que complementa XenServer
+Es la única interfaz que tiene XenServer en local. En ella se pueden hacer algunas configuraciones, pero no todas las que necesitamos. XenCenter es un programa bastante interesante que complementa XenServer.
 
 ![](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/XEN/xencenter/1.PNG)
 
@@ -299,10 +299,6 @@ Gracias a No-IP tengo un dominio para el servidor web [jugger.sytes.net](http://
 
 <div id='id7' />
 
-activar forwardign
-
-
-
 Una de las Raspberry Pi 3B la he configurado como firewall. Ésta es la que recibe todo el tráfico ya que se sitúa delante del balanceador de carga. Como sistema operativo tiene Raspbian 4.9, sin ningún software específico instalado. La configuración como firewall la he realizado con iptables usando el siguiente script:
 
 ```bash
@@ -375,6 +371,20 @@ Resumiendo: Como política por defecto he denegado todo tipo de conexión y a pa
 - Permito el tráfico (entrada y salida) del puerto 53 (para DNS).
 - Redirecciono todo el tráfico que entra por los puertos 80 y 443 a los puertos 80 y 443 del balanceador de carga.
 
+
+Para que el forwarding funcione es necesario descomentar la siguiente línea del archivo */etc/sysctl.conf*:
+
+```bash
+net.ipv4.ip_forward=1
+```
+
+Finalmente, para que este script se ejecute cada vez que arranque el sistema incluyo al archivo */etc/rc.local* lo siguiente:
+
+```bash
+sudo ./scripts/firewall.sh
+```
+
+> Nota: El script lo he guardado en /scripts.
 
 ## 8. SSL
 
