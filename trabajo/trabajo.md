@@ -289,7 +289,7 @@ He configurado sólo para que funcione con HTTP. El peso que le he dado a cada m
 
 Ahora podemos comprobar que funciona:![workinglb](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\images\loadbalancer\workinglb.PNG)
 
-Gracias al No-IP tengo un dominio para el servidor web [jugger.sytes.net](http://jugger.sytes.net), por lo que abriendo el puerto 80 en el router puedo acceder al servidor:
+Gracias a No-IP tengo un dominio para el servidor web [jugger.sytes.net](http://jugger.sytes.net), por lo que abriendo el puerto 80 en el router puedo acceder al servidor:
 
 ![workingurl](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\images\loadbalancer\workingurl.PNG)
 
@@ -382,6 +382,40 @@ Resumiendo: Como política por defecto he denegado todo tipo de conexión y a pa
 ## 8. SSL
 
 <div id='id8' />
+
+He configurado un certificado SSL de CertBot (Let's Encrypt) para el servidor web. Lo primero que hice fue descargar el instalador que crea el certificado:
+
+```bash
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
+```
+
+Y luego ejecutarlo, pero con los flags para que solo genere el cerficado:
+
+```bash
+certbot-auto certonly --standalone
+```
+
+Una vez tengo el cerficado creado (se almacena en */etc/letsencrypt*), creo la siguiente carpeta y la protejo:
+
+```bash
+sudo mkdir -p /etc/haproxy/ssl
+sudo chmod -R go-rwx /etc/haproxy/ssl
+```
+
+HAProxy necesita en un solo archivo la clave privada y la cadena, para unirlos y guardar el archivo en */etc/haproxy/ssl* ejecuto:
+
+```bash
+DOMAIN='jugger.sytes.net' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/ssl/$DOMAIN.pem'
+```
+
+Finalmente modifico el archivo de configuración para incluir el certificado SSL:![configssl](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\images\loadbalancer\configssl.PNG)
+
+Por último compruebo que el puerto 443 está abierto tanto en los nodos como en el balanceador. Tras eso observamos que la web funciona perfectamente, con un certificado SSL seguro.
+
+![workingssl](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\images\loadbalancer\workingssl.PNG)
+
+![workingssl2](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\images\loadbalancer\workingssl2.png)
 
 ## 9. Benchmarking
 
@@ -477,3 +511,9 @@ https://es.wikipedia.org/wiki/VMware_ESXi
 https://www.vmware.com/products/esxi-and-esx.html
 
 https://www.youtube.com/watch?v=-KmgwQORAX8
+
+https://fly.io/articles/load-balancing-https-with-lets-encrypt/
+
+https://es.wikipedia.org/wiki/Xen
+
+https://www.citrix.es/products/xenserver/
