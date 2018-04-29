@@ -208,7 +208,7 @@ Llegados a este punto podemos comprobar si funcionan los servidores web:
 
 - WEB02
 
-  ![web02](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/https/.PNG)
+  ![web02](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/https/web02.PNG)
 
 
 
