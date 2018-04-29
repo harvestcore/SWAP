@@ -179,7 +179,7 @@ Además les asigno una interfaz de red, siguiendo el siguiente esquema:
 
 > Nota: Estas IP las he asignado para configurar Xen y las VM desde mi máquina principal (dentro de la red 192.168.1.0), más tarde configuraré Xen, firewall y balanceador en una red interna 10.10.10.0.
 
-![8](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/XEN/createvm/.PNG)
+![8](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/XEN/createvm/8.PNG)
 
 Al final nos muestra un resumen de cómo queda la VM:
 
@@ -208,7 +208,7 @@ Llegados a este punto podemos comprobar si funcionan los servidores web:
 
 - WEB02
 
-  ![web02](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/https/.PNG)
+  ![web02](https://github.com/harvestcore/SWAP/blob/master/trabajo/images/https/web02.PNG)
 
 
 
