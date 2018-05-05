@@ -1,4 +1,4 @@
-#trabajo xd
+#Servidores web de altas prestaciones en entornos virtualizados
 
 ## Índice
 
@@ -20,13 +20,19 @@
 
 <div id='id1' />
 
+La idea de este trabajo surgió una tarde que me encontraba jugando online con unos amigos. Necesitabamos un pc para hostear una serie de juegos y ya de paso un lugar común donde tener las IP, puertos y configuraciones de estos servidores. Tuve la feliz idea de convertir todas aquellas ideas en algo real que pudieramos usar cuanto antes y que además me serviera como tema para el trabajo de la asignatura SWAP.
+
+Lo que muestro a continuación, más que un servidor de juegos, sería la web (tanto front como backend) que se utilizará para lo descrito anteriormente. Por otro lado, puesto que el tema de la virtualización me atrae bastante, el los nodos (2) del servidor web estarán en máquinas virtuales sobre el hipervisor XenServer.
+
+Destacar también que ya que tenía un par de Raspberry Pi 3B rondando por casa, las he utilizado como balanceador de carga y como firewall.
+
 ## 2. Hardware
 
 <div id='id2' />
 
 El hardware del que dispongo y que utilizaré para toda la instalación es el siguiente:
 
-| System |      Raspberry PI 3B (x2)       |             Node (x2)             |
+| System |      Raspberry PI 3B (x2)       |             Web Host              |
 | :----: | :-----------------------------: | :-------------------------------: |
 |  CPU   | 4C/4T @ 1.2GHz Broadcom BCM2837 | 4C/4T @ 4.3GHz Intel Core i5-4430 |
 |  MoBo  |           Proprietary           |          Gigabyte H81M-C          |
@@ -37,15 +43,11 @@ El hardware del que dispongo y que utilizaré para toda la instalación es el si
 |  NIC   |            1x 10/100            |       2x Gigabit, 1x 10/100       |
 |   SO   |          Raspbian 4.9           |          Ubuntu 16.04.3           |
 
-
-
-
-
 ## 3. Hypervisor
 
 <div id='id3' />
 
-Un **hipervisor** una plataforma que permite aplicar diversas técnicas de control de [virtualización](https://es.wikipedia.org/wiki/Virtualizaci%C3%B3n) para utilizar, al mismo tiempo, diferentes [sistemas operativos](https://es.wikipedia.org/wiki/Sistema_operativo) (sin modificar o modificados, en el caso de [paravirtualización](https://es.wikipedia.org/wiki/Paravirtualizaci%C3%B3n)) en una misma computadora. 
+Un **hipervisor** una plataforma que permite aplicar diversas técnicas de control de virtualización para utilizar, al mismo tiempo, diferentes sistemas operativos (sin modificar o modificados, en el caso de paravirtualización) en una misma máquina. Presentan a los sistemas operativos virtualizados (sistemas invitados) una plataforma operativa virtual (hardware virtual), a la vez que ocultan a dicho sistema operativo virtualizado las características físicas reales del equipo sobre el que operan.
 
 ### 	Tipo 1
 
@@ -429,6 +431,47 @@ Por último compruebo que el puerto 443 está abierto tanto en los nodos como en
 
 <div id='id10' />
 
+Para comprobar el rendimiento del servidor he realizado una serie de benchmarks con AB, haciendo las peticiones al firewall que hay frente al balanceador de carga, al archivo *index.html*. Los resultados los he resumido en la tabla siguiente:
+
+| Concurrencia | Nº de peticiones | Pet/sec |  Kbps  |
+| :----------: | :--------------: | :-----: | :----: |
+|      1       |        10        | 1026.02 | 336.64 |
+|      1       |       100        | 1733.38 | 358.86 |
+|      1       |       1000       | 3091.84 | 640.11 |
+|      1       |      10000       | 3191.76 | 660.8  |
+|      1       |      100000      | 3212.64 | 665.12 |
+|      10      |        10        | 2009.65 | 416.06 |
+|      10      |       100        | 2070.35 | 428.63 |
+|      10      |       1000       | 3634.74 | 752.5  |
+|      10      |      10000       | 3877.75 | 802.81 |
+|      10      |      100000      | 3873.87 | 802.01 |
+|     100      |       100        | 1985.55 | 411.07 |
+|     100      |       1000       | 3437.36 | 711.64 |
+|     100      |      10000       | 3838.54 | 794.7  |
+|     100      |      100000      | 3762.11 | 778.87 |
+|     1000     |       1000       | 2519.38 | 521.59 |
+|     1000     |      10000       | 3750.82 | 776.54 |
+|     1000     |      100000      | 3892.27 | 806.65 |
+|     1000     |     1000000      | 3928.16 | 813.25 |
+
+![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps1.png)
+
+![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr1.png)
+
+![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps10.png)
+
+![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr10.png)
+
+![ps100](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps100.png)
+
+![tr100](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr100.png)
+
+![ps1000](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps1000.png)
+
+![tr1000](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr1000.png)
+
+Tiene una media de 3080.01 peticiones/segundo y una transferencia media de 637.65 Kbps, lo que es bastante respetable para el hardware sobre el que está montado el servidor web. Como se aprecia en las gráficas, una vez el tráfico aumenta en más de 1000 peticiones el rendimiento que ofrece aumenta considerablemente. Así mismo conforme aumenta también la concurrencia de usuarios el rendimiento también aumenta, aunque más levemente. Filtrando los datos (más de 1000 peticiones) obtenemos un promedio de 3539.63 peticiones/segundo y 723.81 Kbps.
+
 ## 10. Web
 
 <div id='id11' />
@@ -501,7 +544,7 @@ También abro con ufw el puerto 3306 en los nodos.
 
 
 
-Y ya estaría. El sistema en su conjunto funciona perfectamentamente. No se trata de un sistema de altas prestaciones, pero pienso que para el uso que va a tener (mis amigos y yo) es más que suficiente. El sistema debería escalar bien para el tráfico que le vamos a dar.
+Y ya estaría. El sistema en su conjunto funciona perfectamentamente. No se trata de un sistema de muy altas prestaciones, pero pienso que para el uso que va a tener (mis amigos y yo) es más que suficiente. El sistema debería escalar bien para el tráfico que le vamos a dar.
 
 
 
@@ -513,12 +556,19 @@ https://es.wikipedia.org/wiki/Hipervisor
 
 https://es.wikipedia.org/wiki/VMware_ESXi
 
+http://www.netstandard.com/virtual-servers-work
+
 https://www.vmware.com/products/esxi-and-esx.html
 
 https://www.youtube.com/watch?v=-KmgwQORAX8
 
-https://fly.io/articles/load-balancing-https-with-lets-encrypt/
+https://fly.io/articles/load-balancing-https-with-lets-encrypt
 
 https://es.wikipedia.org/wiki/Xen
 
-https://www.citrix.es/products/xenserver/
+https://www.citrix.es/products/xenserver
+
+https://es.wikipedia.org/wiki/Paravirtualizaci%C3%B3n
+
+https://jugger.sytes.net
+
