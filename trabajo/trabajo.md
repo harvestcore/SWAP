@@ -1,4 +1,4 @@
-#Servidores web de altas prestaciones en entornos virtualizados
+# Servidores web de altas prestaciones en entornos virtualizados
 
 ## Índice
 
@@ -454,21 +454,21 @@ Para comprobar el rendimiento del servidor he realizado una serie de benchmarks 
 |     1000     |      100000      | 3892.27 | 806.65 |
 |     1000     |     1000000      | 3928.16 | 813.25 |
 
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps1.png)
+![](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/ps1.png)
 
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr1.png)
+![](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/tr1.png)
 
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps10.png)
+![](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/ps10.png)
 
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr10.png)
+![](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/tr10.png)
 
-![ps100](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps100.png)
+![ps100](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/ps100.png)
 
-![tr100](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr100.png)
+![tr100](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/tr100.png)
 
-![ps1000](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\ps1000.png)
+![ps1000](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/ps1000.png)
 
-![tr1000](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\trabajo\benchmark\tr1000.png)
+![tr1000](https://github.com/harvestcore/SWAP/blob/master/trabajo/benchmark/tr1000.png)
 
 Tiene una media de 3080.01 peticiones/segundo y una transferencia media de 637.65 Kbps, lo que es bastante respetable para el hardware sobre el que está montado el servidor web. Como se aprecia en las gráficas, una vez el tráfico aumenta en más de 1000 peticiones el rendimiento que ofrece aumenta considerablemente. Así mismo conforme aumenta también la concurrencia de usuarios el rendimiento también aumenta, aunque más levemente. Filtrando los datos (más de 1000 peticiones) obtenemos un promedio de 3539.63 peticiones/segundo y 723.81 Kbps.
 
