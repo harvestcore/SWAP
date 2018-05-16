@@ -6,7 +6,7 @@
 - [Práctica 2](https://github.com/harvestcore/SWAP/blob/master/practicas/p2/p2.md)
 - [Práctica 3](https://github.com/harvestcore/SWAP/tree/master/practicas/p3/p3.md)
 - [Práctica 4](https://github.com/harvestcore/SWAP/tree/master/practicas/p4/p4.md)
-- Práctica 5 - todo
+- [Práctica 5](https://github.com/harvestcore/SWAP/tree/master/practicas/p4/p5.md)
 
 
 
