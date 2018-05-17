@@ -19,4 +19,6 @@
 
 ## Trabajo
 
-- [Servidores web de altas prestaciones en entornos virtualizados](https://github.com/harvestcore/SWAP/blob/master/trabajo/trabajo.md)
+- [Servidores web de altas prestaciones en entornos virtualizados (Desarrollo)](https://github.com/harvestcore/SWAP/blob/master/trabajo/trabajo.md)
+- [Servidores web de altas prestaciones en entornos virtualizados (Presentación)](https://github.com/harvestcore/SWAP/blob/master/trabajo/ppt/Servidores%20web%20de%20altas%20prestaciones%20en%20entornos%20virtualizados.pdf)
+
