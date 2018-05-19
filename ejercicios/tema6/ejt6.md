@@ -24,7 +24,7 @@ iptables -I INPUT -j ACCEPT
 
 Para comprobarlo he usado `sudo netstat -tulnp`:
 
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\ejercicios\tema6\images\puertos.png)
+![](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema6/images/puertos.png)
 
 
 
