@@ -24,7 +24,7 @@ He instalado un Apache en mi portátil y he hecho las peticiones desde mi PC de 
 
 `ip.dst == 192.168.1.48 && tcp-port == 80`
 
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\ejercicios\tema5\images\wireshark.jpg)
+![](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema5/images/wireshark.jpg)
 
 ## 5.3
 
