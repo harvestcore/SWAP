@@ -8,15 +8,7 @@ IBM (datos algo desactualizados) tiene mainframes desde 800.000\$ hasta 33M\$, p
 
 ## 4.2
 
-En la siguiente imagen se puede ver una comparativa entre diferentes balanceadores de carga y su precio.
-
-![](C:\Users\Angel\Dropbox\Universidad\Tercero\Segundo Cuatri\SWAP\ejercicios\tema4\images\loadbalancersprice.PNG)
-
-> Fuente: http://www.sintel.com/bibli/telechargement/425/document_IT.pdf
-
 ## 4.3
-
-
 
 ## 4.4
 
