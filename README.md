@@ -15,6 +15,10 @@
 - [Tema 1](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema1/ejt1.md)
 - [Tema 2](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema2/ejt2.md)
 - [Tema 3](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema3/ejt3.md)
+- [Tema 4](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema4/ejt4.md)
+- [Tema 5](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema5/ejt5.md)
+- [Tema 6](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema6/ejt6.md)
+- [Tema 7](https://github.com/harvestcore/SWAP/blob/master/ejercicios/tema7/ejt7.md)
 
 
 ## Trabajo
